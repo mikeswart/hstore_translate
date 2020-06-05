@@ -68,7 +68,7 @@ module HstoreTranslate
       # Returns the attribute name Symbol, locale Symbol, and a Boolean
       # indicating whether or not the caller is attempting to assign a value.
       def parse_translated_attribute_accessor(method_name)
-        return unless /(?<attribute>[a-z_]+)_(?<locale>[a-z]{2}(-[A-Z]{2})?(-[0-9]{3})?))(?<assignment>=?)\z/ =~ method_name
+        return unless /(?<attribute>[a-z_]+)_(?<locale>[a-z]{2}(-[A-Z]{2})?(-[0-9]{3})?)(?<assignment>=?)\z/ =~ method_name
 
         translated_attr_name = attribute.to_sym
         return unless translated_attribute_names.include?(translated_attr_name)
